@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
@@ -20,10 +21,15 @@ class MainActivity : AppCompatActivity() {
         AppCenter.setLogLevel(Log.VERBOSE)
         AppCenter.start(application, "050a3ea1-107f-457d-ab70-80e85d075535", Analytics::class.java, Crashes::class.java)
 
-        Analytics.trackEvent("Before Crash")
-        stackOverflow() //Cause a crash
-        Analytics.trackEvent("After Crash")
+        Analytics.trackEvent("MainActivity Start")
+        //stackOverflow() //Cause a crash
+        //Analytics.trackEvent("After Crash")
 
+        val Button = findViewById <Button> (R.id.Button)
+
+        Button.setOnClickListener() {
+            stackOverflow()
+        }
         setSupportActionBar(findViewById(R.id.toolbar))
 
         findViewById<FloatingActionButton>(R.id.fab).setOnClickListener { view ->
