@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         AppCenter.setLogLevel(Log.VERBOSE)
-        AppCenter.start(application, "050a3ea1-107f-457d-ab70-80e85d075535", Analytics::class.java, Crashes::class.java)
+        AppCenter.start(application, "0f17dbbf-d18d-45a0-b671-c8e868bf05a0", Analytics::class.java, Crashes::class.java)
 
         Analytics.trackEvent("MainActivity Start")
         //stackOverflow() //Cause a crash
